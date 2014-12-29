@@ -2,8 +2,18 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 
-app.get('/', function(request, response) {
-	response.send("Hello world");
+app.set('view engine', 'ejs');
+
+// use res.render to load up an ejs view file
+
+// index page
+app.get('/', function(req, res) {
+	res.render('pages/index');
+});
+
+// about page
+app.get('/about', function(reg, res) {
+	res.render('pages/about');
 });
 
 server.listen(3000, function() {
