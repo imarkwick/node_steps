@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 // use res.render to load up an ejs view file
 
@@ -24,8 +26,13 @@ app.get('/', function(req, res) {
 });
 
 // about page
-app.get('/about', function(reg, res) {
+app.get('/about', function(req, res) {
 	res.render('pages/about');
+});
+
+// instant chat page
+app.get('/chat', function(req, res) {
+	res.render('sockets');
 });
 
 server.listen(3000, function() {

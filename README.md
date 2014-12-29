@@ -1,4 +1,4 @@
-#Template your Node tutorial
+#Template Node tutorial
 
 This was a tutorial using ejs to template views in Node.
 
