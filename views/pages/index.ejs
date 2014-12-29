@@ -11,8 +11,13 @@
 
 	<main>
 		<div class="jumbotron">
-			<h1>sOme teXt</h1>
-			<p>PlayINg witH teMplaTing</p>
+			<h1><%= tagline %></h2>
+			<h2>Loop</h2>
+			<ul>
+				<% drinks.forEach(function(drink) { %>
+					<li><%= drink.name %> - <%= drink.drunkness %></li>
+				<% }); %>
+			</ul>
 		</div>
 	</main>
 

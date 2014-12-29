@@ -8,7 +8,19 @@ app.set('view engine', 'ejs');
 
 // index page
 app.get('/', function(req, res) {
-	res.render('pages/index');
+	
+	var drinks = [
+		{ name: 'Bloody Mary', drunkness: 2 },
+		{ name: 'Gin and tonic', drunkness: 3 },
+		{ name: 'Vodka and lemonade', drunkness: 4 } 
+	];
+
+	var tagline = "Let's drink cocktails";
+
+	res.render('pages/index', {
+		drinks: drinks,
+		tagline: tagline
+	});
 });
 
 // about page
