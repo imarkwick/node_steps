@@ -9,11 +9,7 @@ app.use(express.static(__dirname + '/public'));
 
 // use res.render to load up an ejs view file
 
-// index page
-// app.get('/', function(req, res) {
-// 	response.render('/');
-// });
-
+// home page
 app.get('/', function(req, res) {
 	
 	var drinks = [
@@ -38,6 +34,11 @@ app.get('/about', function(req, res) {
 // instant chat page
 app.get('/sockets', function(request, response) {
 	response.render('pages/sockets');
+});
+
+// football api page
+app.get('/football', function(request, response) {
+	response.render('pages/football');
 });
 
 server.listen(3000, function() {
