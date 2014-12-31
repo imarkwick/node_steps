@@ -11,6 +11,10 @@ app.use(express.static(__dirname + '/public'));
 
 // index page
 app.get('/', function(req, res) {
+	response.render('/');
+});
+
+app.get('/', function(req, res) {
 	
 	var drinks = [
 		{ name: 'Bloody Mary', drunkness: 2 },
