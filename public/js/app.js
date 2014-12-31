@@ -1,0 +1,1 @@
+var livescoreSearch = angular.module('ScoreSearch', ['ngResource']);
