@@ -3,7 +3,9 @@
 <head>
 	<% include ../partials/head %>
 	<style homepage-style>
-	
+	h4 {
+		color: #B200B2;
+	}
 	</style>
 </head>
 <body class="container">
@@ -17,11 +19,14 @@
 			<h1>sOme tuNes</h1>
 			<p>bEatS</p>
 			<h2>mOviEs we'Re WatchINg..</h2>
-			<p>so far.. just gamer</p>
+			<p>so far.. just gamer, the interview & now you see me
+		 & interstellar & too much made in chelsea</p>
+		 <h4>bEsT FilM SO FAr...</h4>
+		 <p> insterstellar </p>
 			<h3><%= tagline %></h3>
 			<ul>
 				<% drinks.forEach(function(drink) { %>
-					<li><%= drink.name %> - <%= drink.drunkness %></li>
+					<li><%= drink.name %> - <%= drink.drunkness %>%</li>
 				<% }); %>
 			</ul>
 		</div>
