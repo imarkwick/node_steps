@@ -41,6 +41,11 @@ app.get('/football', function(request, response) {
 	response.render('pages/football');
 });
 
+// screamer page
+app.get('/screamer', function(request, response) {
+	response.render('pages/screamer');
+});
+
 server.listen(3000, function() {
 	console.log("Server listening on port 3000");
 });

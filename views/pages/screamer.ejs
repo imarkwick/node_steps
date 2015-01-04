@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ScoreSearch">
+<head>
+	<style homepage-style>
+
+	body,html {
+	  background: rgba(30,30,30,1);
+	}
+
+	.screamer {
+	  position: relative;
+	  width: 100px;
+	  height: 100px;
+	  background: rgba(60,180,255,1);
+	  border-radius: 50%;
+	  margin: 100px auto;
+
+	  -webkit-transition: width 1s ease, height .5s ease, background 1.5s ease;
+	  -moz-transition: width 1s ease, height .5s ease, background 1.5s ease;
+	  -o-transition: width 1s ease, height .5s ease, background 1.5s ease;
+	  -ms-transition: width 1s ease, height .5s ease, background 1.5s ease;
+	  transition: width 1s ease, height .5s ease, background 1.5s ease;
+	}
+
+	.screamer:hover {
+	  width: 200px;
+	  height: 200px;
+	  margin: 100px auto;
+	  background: rgba(255,100,60,1);
+
+	  -webkit-animation: shake .15s infinite;
+	  -moz-animation: shake .15s infinite;
+	  -ms-animation: shake .15s infinite;
+	  -o-animation: shake .15s infinite;
+	  animation: shake .15s infinite;
+	}
+
+	@keyframes "shake" {
+	  0% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+	  25% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  50% {
+	    left: .1%;
+	    bottom: .1%;
+	  }
+	  75% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  100% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+
+	}
+
+	@-moz-keyframes shake {
+	  0% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+	  25% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  50% {
+	    left: .1%;
+	    bottom: .1%;
+	  }
+	  75% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  100% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+
+	}
+
+	@-webkit-keyframes "shake" {
+	  0% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+	  25% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  50% {
+	    left: .1%;
+	    bottom: .1%;
+	  }
+	  75% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  100% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+
+	}
+
+	@-ms-keyframes "shake" {
+	  0% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+	  25% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  50% {
+	    left: .1%;
+	    bottom: .1%;
+	  }
+	  75% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  100% {
+	    left: -2%;
+	    bottom: .1%;
+	  }
+
+	}
+
+	@-o-keyframes "shake" {
+	  0% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+	  25% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  50% {
+	    left: .1%;
+	    bottom: .1%;
+	  }
+	  75% {
+	    left: 0%;
+	    bottom: -.1%;
+	  }
+	  100% {
+	    left: -.1%;
+	    bottom: .1%;
+	  }
+
+	}
+
+	.lefteye,.righteye {
+	  z-index: 999;
+	  background: rgba(255,255,255,1);
+	  position: absolute;
+	  width: 10px;
+	  height: 10px;
+	  border-radius: 50%;
+	  top: 25%;
+
+	  -webkit-transition: all 1s ease;
+	  -moz-transition: all 1s ease;
+	  -o-transition: all 1s ease;
+	  -ms-transition: all 1s ease;
+	  transition: all 1s ease;
+	}
+
+	.lefteye {
+	  left: 25%;
+	}
+
+	.righteye {
+	  right: 25%;
+	}
+
+	.screamer:hover .lefteye {
+	  top: 15%;
+	  left: 15%;
+	  width: 20px;
+
+	  -webkit-transform: rotate(-45deg);
+	  -moz-transform: rotate(-45deg);
+	  -o-transform: rotate(-45deg);
+	  -ms-transform: rotate(-45deg);
+	  transform: rotate(-45deg);
+	}
+
+	.screamer:hover .righteye {
+	  top: 15%;
+	  right: 15%;
+	  width: 20px;
+
+	  -webkit-transform: rotate(45deg);
+	  -moz-transform: rotate(45deg);
+	  -o-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	}
+
+	.mouth {
+	  z-index: 999;
+	  background: rgba(255,255,255,1);
+	  position: absolute;
+	  bottom: 20%;
+	  left: 50%;
+	  width: 40px;
+	  height: 3px;
+	  margin-left: -20px;
+	  border-radius: 50%;
+
+	  -webkit-transition: all 1s ease;
+	  -moz-transition: all 1s ease;
+	  -o-transition: all 1s ease;
+	  -ms-transition: all 1s ease;
+	  transition: all 1s ease;
+	}
+
+	.screamer:hover .mouth {
+	  height: 120px;
+	  width: 120px;
+	  margin-left: -60px;
+	  border-radius: 50%;
+
+	  -webkit-animation: wiggle .25s infinite;
+	  -moz-animation: wiggle .25s infinite;
+	  -ms-animation: wiggle .25s infinite;
+	  -o-animation: wiggle .25s infinite;
+	  animation: wiggle .25s infinite;
+	}
+
+	@keyframes "wiggle" {
+	  0% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+	  25% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  50% {
+	    left: 52%;
+	    bottom: 22%;
+	  }
+	  75% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  100% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+
+	}
+
+	@-moz-keyframes wiggle {
+	  0% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+	  25% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  50% {
+	    left: 52%;
+	    bottom: 22%;
+	  }
+	  75% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  100% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+
+	}
+
+	@-webkit-keyframes "wiggle" {
+	  0% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+	  25% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  50% {
+	    left: 52%;
+	    bottom: 22%;
+	  }
+	  75% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  100% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+
+	}
+
+	@-ms-keyframes "wiggle" {
+	  0% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+	  25% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  50% {
+	    left: 52%;
+	    bottom: 22%;
+	  }
+	  75% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  100% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+
+	}
+
+	@-o-keyframes "wiggle" {
+	  0% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+	  25% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  50% {
+	    left: 52%;
+	    bottom: 22%;
+	  }
+	  75% {
+	    left: 50%;
+	    bottom: 18%;
+	  }
+	  100% {
+	    left: 48%;
+	    bottom: 22%;
+	  }
+
+	}
+
+	.leftear,.rightear {
+	  z-index: 0;
+	  position: absolute;
+	  width: 30px;
+	  height: 30px;
+	  background: rgba(60,180,255,1);
+	  top: 40%;
+
+	  -webkit-transition: all 1.5s ease;
+	  -moz-transition: all 1.5s ease;
+	  -o-transition: all 1.5s ease;
+	  -ms-transition: all 1.5s ease;
+	  transition: all 1.5s ease;
+	}
+
+	.leftear {
+	  border-radius: 50% 0 0 50%;
+	  left: -8px;
+	}
+
+	.rightear {
+  	border-radius: 0 50% 50% 0;
+  	right: -8px;
+	}
+
+	.screamer:hover .leftear {
+  	background: rgba(255,100,60,1);
+  	left: -10px;
+  	height: 40px
+	}
+
+	.screamer:hover .rightear {
+  	background: rgba(255,100,60,1);
+  	right: -10px;
+  	height: 40px
+	}
+
+	</style>
+	<% include ../partials/head %>
+</head>
+
+<body class="container" ng-controller="ScoreSearchController">
+	<header>
+		<% include ../partials/header %>
+	</header>
+	<br>
+	<br>
+
+	<div class="screamer">
+	  
+	  <div class="lefteye"></div>
+	  <div class="righteye"></div>
+	  
+	  <div class="mouth"></div>
+	  
+	  <div class="leftear"></div>
+	  <div class="rightear"></div>
+	  
+	</div>
+	<br>
+	<br>
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+</body>
+	<script src="public/js/app.js"></script>
+	<script src="public/js/scoreSearchController.js"></script>
+</html>
