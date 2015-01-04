@@ -46,6 +46,11 @@ app.get('/screamer', function(request, response) {
 	response.render('pages/screamer');
 });
 
+// play page
+app.get('/play', function(request, response) {
+	response.render('pages/play');
+});
+
 server.listen(3000, function() {
 	console.log("Server listening on port 3000");
 });
