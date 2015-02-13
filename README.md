@@ -1,19 +1,29 @@
-#Template Node tutorial
+# Template Node tutorial
 
-This was a tutorial using ejs to template views in Node.
+This was a tutorial using ejs to template views in Node. I added to it by creating an instant chat feature using web sockets, and a few pages playing around with some cool interactive CSS.
 
-It includes using repeatable parts of the site in partials and passing data to the views.
+## The application includes: 
 
-The application consists of two pages - a home page with full width, and an about page with a sidebar.
+- Home page with full width
+- About page with sidebar
+- Chat page with instant messaging
+- Football page to search for match scores using API (unfinished)
+- Screamer & Play pages with css
 
-To install the dependencies, run
+## Technologies used:
+
+- Node
+- Javascript
+- WebSockets
+- HTML5
+- EJS
+- CSS3
+
+## How to run the server:
 
 ```sh
+$ git clone https://github.com/imarkwick/node_steps.git
+$ cd node_steps
 $ npm install -d
-``` 
-
-To run the server,
-
-```sh
 $ npm start
-``` 
+```
